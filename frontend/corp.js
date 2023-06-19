@@ -11,14 +11,14 @@ function runFunc(err) {
   if (err) {
     console.log(err);
   }
-  console.log('Listening at https://zoom-bot-theta.vercel.app/index.html');
+  console.log('Listening at http://127.0.0.1:9999/index.html');
 }
 
 new WebpackDevServer(
   {
     port: 9999,
     host: '0.0.0.0',
-    open: https ? 'https://zoom-bot-theta.vercel.app/' : 'https://zoom-bot-theta.vercel.app/',
+    open: https ? 'https://localhost:9999/' : 'http://127.0.0.1:9999/',
     https: https
       ? {
         cert: fs.readFileSync('./localhost.crt'),
@@ -35,7 +35,7 @@ new WebpackDevServer(
     proxy: [
       {
         path: '/meeting.html',
-        target: 'https://zoom-bot-theta.vercel.app/'
+        target: 'http://127.0.0.1:9998/'
       }
     ],
     static: './',
