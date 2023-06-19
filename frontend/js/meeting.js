@@ -174,7 +174,7 @@ recognition.onresult = (event) => {
   const formData = {
     'data': transcript
   }
-  axios.post('http://localhost:3000/openAI_GPT', formData).then((res) => {
+  axios.post('https://zoom-bot-backend.vercel.app/openAI_GPT', formData).then((res) => {
     // console.log("done sending ", res);
     // console.log("the GPT ans= ", res.data);
     // const utteracnce= new SpeechSynthesisUtterance();
